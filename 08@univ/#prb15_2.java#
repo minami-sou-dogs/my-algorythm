@@ -1,0 +1,53 @@
+class ClassA{
+    public static ClassA last=null;
+    public String name;
+    public ClassA(String name){
+	this.name=name;
+	last=this;
+    }
+    @Override public String toString(){
+    return "["+name+"]";
+    }
+}
+
+class ClassB extends ClassA{
+    public ClassA friend;
+    public ClassB(String name,ClassA friend){
+	super(name);
+	this.friend=friend;
+    }
+    @Override public String toString(){
+	return "["+name+","+friend+"]";
+    }
+}
+
+public class prb15_2{
+    public static ClassA q=new ClassA("ジマイマ");
+    public static void main(Stirng[] args){
+	ClassA a=new ClassA("ミトン");
+	ClassA b=new ClassA("とむ");
+	ClassA c=new ClassA("モペット");
+	ClassB[] arrayA=new ClassB[4];
+	b=c;
+	for(int i=0;i<4;i++){
+	    arrayA[i]=new ClassB("犬"+i);
+	}
+	arrayA[3].friend=arrayA[3];
+	arrayA[0]=arrayA[1];
+	c=arrayA[2];
+	arrayA[1]=null;
+	ClassA d=arrayA[0];
+	ClassB arrayB[]=new ClassB[4];
+	arrayB[0]=new ClassB("風呂プシー",new ClassA("野ねずみ"));
+	arrayB[1]=new ClassB("もプシー",new ClassA("ナトキン"));
+	arrayB[2]=new ClassB("かとんテール",c);
+	arrayB[3]=new ClassB("ピーター",new ClassA("ベンジャミン"));
+	arrayA=null;
+	arrayB[0].friend=null;
+	arrayB[1]=null;
+	arrayB[2]=null;
+	ClassB e=new ClassB("ルーシー",new ClassA("ディぎー"));
+	e=null;
+	//ここの時点で参照されているインスタンスは
+    }
+}

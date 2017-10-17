@@ -1,0 +1,11 @@
+#!/bin/sh
+n=1
+while test $n -le 30;do
+if test $n -lt 10; then
+java prg2_12_1 graph/graph00$n.txt>GraphAns00$n.txt
+else
+java prg2_12_1 graph/graph0$n.txt>GraphAns0$n.txt
+fi
+n=`expr $n + 1`
+diff graph/graph001.txt 課題１/GraphAns001.txt
+done

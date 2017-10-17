@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+public  class acmplaK{
+    public static void main(String[] args){
+	String k="K";
+	try{
+	BufferedReader reader=new BufferedReader(new FileReader(k));
+	String line;
+	String[] k1;
+	int a;
+	int b;
+	try{
+	while((line=reader.readLine())!=null){
+	k1=line.split(" ",0);
+        a=Integer.parseInt(k1[0]);
+        b=Integer.parseInt(k1[1]);
+	System.out.println(a/b);
+	}
+	}catch(Exception e){
+	    System.exit(0);
+	}
+    }
+}

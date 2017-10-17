@@ -1,0 +1,20 @@
+import java.util.*;
+import java.io.*;
+class acmplaJ{
+    public static void main(String[] args){
+	try{
+	BufferedReader reader=new BufferedReader(new FileReader(acmj.txt));
+	}catch(Exception e){
+	}
+	String line=reader.nextLine();
+	int a=line.nextInt();
+	line=reader.nextLine();
+	int b=line.nextInt();
+	int max=Math.max(a,b);
+	while((line=reader.nextLine())!=null){
+	    a=line.nextInt();
+	    max=Math.max(max,a);
+	}
+	System.out.print(max);
+    }
+}
